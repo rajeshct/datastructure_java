@@ -2,7 +2,7 @@ import java.util.*;
 public class ReverseListFromGivenNode {
     
     public static void main(String args[]) {
-        Node head=new Node(1,new Node());
+        Node head=new Node(1,null);
         createList(head);
         reverseListFromPosition(head,getElementAt(head,3));
         printList(head);
@@ -50,13 +50,12 @@ public class ReverseListFromGivenNode {
     
 
     private static void createList(Node head){
-        Node current=head.next;
+        Node current=head;
         for(int i=2;i<20;i++){
-            current.value=i;
             current.next =new Node();
-            current = current.next;
+            current=current.next;
+            current.value=i;
         }
-        current.value=20;
     }
     
      private static Node getElementAt(Node head, int index){
