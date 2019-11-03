@@ -1,29 +1,12 @@
 package com.remember.password;
 
-public class LinkedListOperation {
+public class CreateLinkedList {
 
     public static void main(String args[]) {
         Node head = new Node(1, new Node());
         createList(head);
-        head = reverseList(head);
         printList(head);
     }
-
-    private static Node reverseList(Node head) {
-        Node current = head;
-        Node previous = null;
-        Node next;
-        
-        while (current != null) {
-            next = current.next;
-            current.next = previous;
-            previous = current;
-            current = next;
-        }
-
-        return previous;
-    }
-
 
     private static void createList(Node head) {
         Node current = head.next;
