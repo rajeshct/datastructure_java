@@ -3,7 +3,7 @@ package com.remember.password;
 public class LinkedListOperation {
 
     public static void main(String args[]) {
-        Node head = new Node(1, new Node());
+        Node head = new Node(1, null);
         createList(head);
         head = reverseList(head);
         printList(head);
@@ -26,13 +26,12 @@ public class LinkedListOperation {
 
 
     private static void createList(Node head) {
-        Node current = head.next;
-        for (int i = 2; i < 20; i++) {
-            current.value = i;
-            current.next = new Node();
-            current = current.next;
+        Node current=head;
+        for(int i=2;i<20;i++){
+            current.next =new Node();
+            current=current.next;
+            current.value=i;
         }
-        current.value = 20;
     }
 
     private static void printList(Node head) {
